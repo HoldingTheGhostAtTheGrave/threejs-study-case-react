@@ -1,0 +1,48 @@
+.Boxlist {
+    position: absolute;
+    bottom: 0;
+    z-index: 888;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    .iconDownOutlined {
+        width: 80px;
+        background: #f7f7f7;
+        border-radius: 10px 10px 0 0;
+    }
+    .box {
+        height: 140px;
+        width: 100vw;
+        background: #fff;
+        transition: all 0.5s;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        // padding: 10px;
+    }
+}
+
+.box .boxItem {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 10px 20px;
+    position: relative;
+    .box_logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .box_itme_label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        margin: 0 auto;
+        font-size: 18px;
+        color: #333;
+    }
+}
