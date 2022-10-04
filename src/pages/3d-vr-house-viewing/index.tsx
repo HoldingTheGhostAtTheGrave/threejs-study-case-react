@@ -58,7 +58,7 @@ const boxColor = [
 ];
 
 const VrHouseViewing = () => {
-	const [isShowItem, setIsShoeItem] = useState(false);
+	const [isShowItem, setIsShoeItem] = useState(true);
 	const [loadingSpinning, setLoadingSpinning] = useState(true);
 	const [boxMaterials, setBoxMaterials]: any = useState([]);
 	let threejs: Threejs;
@@ -124,7 +124,7 @@ const VrHouseViewing = () => {
 		setLoadingSpinning(true);
 		setTimeout(() => {
 			loadingModel(index);
-		}, 600);
+		}, 200);
 	};
 	return (
 		<div>

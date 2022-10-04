@@ -3,7 +3,7 @@ import { useCallback, useEffect } from "react";
 import { Scene, Camera, Renderer } from "three";
 import * as THREE from "three";
 import useLoadingModel from "@/hooks/useLoadingModel/index";
-import ModelLoading from "@/components/ModelLoading";
+import { Spin } from "antd";
 
 //创建材质
 const bodyMaterial = new THREE.MeshPhysicalMaterial({
@@ -100,7 +100,7 @@ const Index = () => {
 		const light2 = new THREE.DirectionalLight(0xffffff, 1);
 		light2.position.set(0, 0, -10);
 		threejs.scene.add(light2);
-		const light3 = new THREE.DirectionalLight(0xffffff, 1);		
+		const light3 = new THREE.DirectionalLight(0xffffff, 1);
 		light3.position.set(10, 0, 0);
 		threejs.scene.add(light3);
 		const light4 = new THREE.DirectionalLight(0xffffff, 1);
@@ -130,11 +130,9 @@ const Index = () => {
 
 	return (
 		<div>
-			{/* 加载 */}
-			<div style={{ display: loadValue >= 100 ? "none" : "black" }}>
-				<ModelLoading loadValue={loadValue} />
-			</div>
-			<div id='app'></div>
+			<Spin tip='Loading...' spinning={loadValue <= 100}>
+				<div id='app'></div>
+			</Spin>
 		</div>
 	);
 };
